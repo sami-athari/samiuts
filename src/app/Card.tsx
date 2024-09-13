@@ -69,6 +69,20 @@ const ReviewsSlider: React.FC = () => {
       image: "/4.png",
       review: "Mauris nec magna a diam vehicula tristique at non urna. Proin feugiat..."
     },
+    {
+      name: "Megan Fox",
+      title: "Head of Marketing",
+      company: "Tesla",
+      image: "/4.png",
+      review: "Mauris nec magna a diam vehicula tristique at non urna. Proin feugiat..."
+    },
+    {
+      name: "Chealsea Morgan",
+      title: "CEO",
+      company: "Subway",
+      image: "/1.png",
+      review: "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl..."
+    },
   ];
 
   const sliderRef = useRef<HTMLDivElement>(null);
