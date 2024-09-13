@@ -103,14 +103,6 @@ const ReviewsSlider: React.FC = () => {
     <div className="px-8 py-12 bg-gray-50">
       <h2 className="text-center text-4xl font-bold mb-8 text-gray-800">What people say about Team</h2>
       <div className="relative">
-        <motion.button
-          onClick={scrollLeft}
-          className="absolute left-0 z-10 bg-indigo-600 text-white p-2 rounded-full -ml-4 focus:outline-none"
-          whileHover={{ scale: 1.2 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          &#9664;
-        </motion.button>
         <div
           className="flex overflow-x-auto space-x-6 p-4 scrollbar-hide"
           ref={sliderRef}
@@ -126,14 +118,33 @@ const ReviewsSlider: React.FC = () => {
             />
           ))}
         </div>
-        <motion.button
-          onClick={scrollRight}
-          className="absolute right-0 z-10 bg-indigo-600 text-white p-2 rounded-full -mr-4 focus:outline-none"
-          whileHover={{ scale: 1.2 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          &#9654;
-        </motion.button>
+
+        {/* Container for arrows positioned below the cards */}
+        <div className="flex justify-center mt-4 space-x-8">
+          {/* Left arrow button */}
+          <motion.button
+            onClick={scrollLeft}
+            className="text-indigo-600 p-2 rounded-full focus:outline-none border-2 border-indigo-600"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </motion.button>
+
+          {/* Right arrow button */}
+          <motion.button
+            onClick={scrollRight}
+            className="text-indigo-600 p-2 rounded-full focus:outline-none border-2 border-indigo-600"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </motion.button>
+        </div>
       </div>
     </div>
   );
